@@ -13,7 +13,7 @@ import { TemaService } from "../service/tema.service";
 export class TemaController {
     constructor(private readonly temaService: TemaService) { }
 
-    @Get('/all')
+    @Get('/')
     @HttpCode(HttpStatus.OK)
     findAll(): Promise<Tema[]> {
         return this.temaService.findAll(); 
@@ -25,17 +25,17 @@ export class TemaController {
         return this.temaService.findById(id)
     }
 
-    @Get('/tema/:tema')
+    @Get('/nome/:nome')
     @HttpCode(HttpStatus.OK)
-    findByTema(@Param('tema') tema: string): Promise<Tema[]> {
-        return this.temaService.findByTema(tema)
+    findByTema(@Param('nome') nome: string): Promise<Tema[]> {
+        return this.temaService.findByNome(nome)
     }
 
     
     @Get('/abordagem/:abordagem')
     @HttpCode(HttpStatus.OK)
     findByAbordagem(@Param('aboradagem') abordagem: string): Promise<Tema[]> {
-        return this.temaService.findByTema(abordagem)
+        return this.temaService.findByAbordagem(abordagem)
     }
 
     @Post()
