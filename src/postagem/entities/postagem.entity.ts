@@ -38,13 +38,13 @@ export class Postagem {
               onDelete: "CASCADE"
        })
        @JoinColumn({ name: "usuario_id" })
-       usuario: Usuario[];
+       usuario: Usuario;
 
        @ApiProperty({ type: () => Tema })
        @ManyToOne(() => Tema, (tema) => tema.postagem, {
               onDelete: "CASCADE"
        })
        @JoinColumn({ name: "tema_id" })
-       tema: Tema[];
+       tema: Tema;
 
 }
