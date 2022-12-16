@@ -17,7 +17,6 @@ export class Tema{
     @ApiProperty()
     nome: string;
 
-    @IsNotEmpty() 
     @MaxLength(100)
     @Column({ length: 100, nullable: false})
     @ApiProperty()
